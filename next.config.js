@@ -15,3 +15,11 @@ export default {
     ]
   }
 };
+const isProd = process.env.NODE_ENV === 'production';
+
+module.exports = {
+  basePath: isProd ? '/commerce' : '',
+  assetPrefix: isProd ? '/commerce/' : '',
+  images: { unoptimized: true },
+  output: 'export', // Ensures Next.js does static export
+};
